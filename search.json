@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DH140",
+    "section": "",
+    "text": "DH140 Final Project Blog\n\n\n\n\n\nFirst Draft\n\n\n\n\n\n\nJul 31, 2023\n\n\nVictoria Lam\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJul 30, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJul 27, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/Topics.html",
+    "href": "posts/Topics.html",
+    "title": "DH140 Final Project Blog",
+    "section": "",
+    "text": "The data analyzed in this project is compiled by the Graphic Narrative Corpus (GNC). The dataset includes metadata such as the book title, author, illustrator, genre, publication date, and language. I might investigate the genres present in graphic novels or investigate trends in graphic novels during a time period.\nGraphic Novels Source\n\n\n\nI am interested in exploring how graphic novels have evolved over time. I do not know very much about the history of graphic novels, thus I want to take a broad approach to exploring this dataset.\n\n\n\n\nWhat patterns/trends can be observed in the original language of graphic novel publications over time?\nWhy is a particular genre more popular than others?\nIf a popular genre is replaced by another genre over time, why?\nWhy is one type of adaptation more popular than other forms of adaptation for graphic novels?\nWhy are some graphic novels adapted more often than others?"
+  },
+  {
+    "objectID": "posts/Topics.html#data-description",
+    "href": "posts/Topics.html#data-description",
+    "title": "DH140 Final Project Blog",
+    "section": "",
+    "text": "The data analyzed in this project is compiled by the Graphic Narrative Corpus (GNC). The dataset includes metadata such as the book title, author, illustrator, genre, publication date, and language. I might investigate the genres present in graphic novels or investigate trends in graphic novels during a time period.\nGraphic Novels Source"
+  },
+  {
+    "objectID": "posts/Topics.html#motivation",
+    "href": "posts/Topics.html#motivation",
+    "title": "DH140 Final Project Blog",
+    "section": "",
+    "text": "I am interested in exploring how graphic novels have evolved over time. I do not know very much about the history of graphic novels, thus I want to take a broad approach to exploring this dataset."
+  },
+  {
+    "objectID": "posts/Topics.html#questions",
+    "href": "posts/Topics.html#questions",
+    "title": "DH140 Final Project Blog",
+    "section": "",
+    "text": "What patterns/trends can be observed in the original language of graphic novel publications over time?\nWhy is a particular genre more popular than others?\nIf a popular genre is replaced by another genre over time, why?\nWhy is one type of adaptation more popular than other forms of adaptation for graphic novels?\nWhy are some graphic novels adapted more often than others?"
+  },
+  {
+    "objectID": "posts/Topics.html#summary-of-data-and-statistics",
+    "href": "posts/Topics.html#summary-of-data-and-statistics",
+    "title": "DH140 Final Project Blog",
+    "section": "Summary of data and statistics",
+    "text": "Summary of data and statistics\n\n# Let's being with getting a summary/overview of the Author.csv dataset\n\nauthor_db.describe()\n\n\n\n\n\n\n\n\nID\nGender_ID\n\n\n\n\ncount\n352.000000\n347.000000\n\n\nmean\n223.639205\n0.821326\n\n\nstd\n132.653407\n0.383633\n\n\nmin\n0.000000\n0.000000\n\n\n25%\n111.750000\n1.000000\n\n\n50%\n220.000000\n1.000000\n\n\n75%\n346.250000\n1.000000\n\n\nmax\n450.000000\n1.000000\n\n\n\n\n\n\n\nThe only numerical data in this dataframe is the Gender_ID column, which represents the genders coded as such: 0 = female, 1 = male.\n\nauthor_db[\"Gender_ID\"].plot(kind=\"hist\")\n\n&lt;Axes: ylabel='Frequency'&gt;\n\n\n\n\n\n\n# Let's examine some of the columns from Author.csv!\nprint(\"Gender_ID:\\n\", author_db['Gender_ID'].value_counts(), '\\n')\nprint(\"CountryOfOriginID:\\n\", author_db['CountryOfOriginID'].value_counts(), '\\n')\nprint(\"Ethnicity:\\n\", author_db['Ethnicity'].value_counts(), '\\n')\n\nGender_ID:\n 1.0    285\n0.0     62\nName: Gender_ID, dtype: int64 \n\nCountryOfOriginID:\n USA                           192\nUK                             35\nCanada                         22\nJapan                           9\nFrance                          9\nPhilippines                     3\nSpain                           3\nBrazil                          2\nItaly                           2\nRussia                          2\nIndia                           2\nBelgium                         2\nArgentina                       2\nPeru                            2\nGreece                          2\nAustralia                       2\nTurkey                          1\nHungary                         1\nGermany                         1\nEngland                         1\nVietnam                         1\nChile                           1\nLebanese Republic               1\nSwitzerland                     1\nRepublic of Côte d'Ivoire       1\nGuatemala                       1\nNew Zealand                     1\nTaiwan                          1\nCroatia                         1\nDenmark                         1\nIsrael                          1\nIran                            1\nSweden                          1\nMalta                           1\nPoland                          1\nSouth Korea                     1\nMexico                          1\nName: CountryOfOriginID, dtype: int64 \n\nEthnicity:\n White               261\nAsian                25\nUnknown              14\nHispanic Origin      10\nAfrican American     10\nOther Race            4\nNative American       1\nBlack                 1\nName: Ethnicity, dtype: int64 \n\n\n\n\nauthor_db.Ethnicity.value_counts().sort_values().plot(kind='barh')\n\n&lt;Axes: &gt;\n\n\n\n\n\n\nbook_db.head()\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n\n\n\n\n0\n0\n7 Miles A Second\n1\nAutobiography\n1996-05-01\n7 Miles A Second.jpg\nEnglish\n0\nsearch.proquest.com\ncolour\n...\n978-1-60699-614-0\n7_Miles_A_Second\n4.01\n382\n7 Miles A Second\n0.0\n0.5\n0.5\nNaN\nPaderborn\n\n\n1\n1\nA Contract With God\n31\nNaN\n1978-01-01\nA Contract with God.png\nEnglish\n0\nrollingstone.com\n--&gt; black&white\n...\n978-0-393-32804-2\nA_Contract_With_God\n4.07\n9146\nA Contract With God\n0.0\nNaN\n1.0\nNaN\nPaderborn\n\n\n2\n2\nA Drifting Life\n8\nNaN\n2008-11-20\nA Drifting LIfe.jpg\nJapanese\n0\n101 Outstanding Graphic Novels by Stephen Weiner\n--&gt; black&white\n...\n978-1-897299-74-6\nA_Drifting_Life\n4.00\n2404\nGekiga Hy\\u014dry\\u016b\n0.0\n1.0\nNaN\nNaN\nBielefeld\n\n\n3\n3\nA Small Killing\n5\nNaN\n1991-10-03\nA Small Killing.JPG\nEnglish\n0\nAmazon.com bestselling graphic novels\ncolour\n...\n1-59291-009-0\nA_Small_Killing\n3.40\n731\nA Small Killing\n0.0\nNaN\n1.0\nNaN\nBielefeld\n\n\n4\n4\nTale of Sand\n0\nNaN\n2011-12-14\nTale of Sand.jpg\nEnglish\n0\nen.wikipedia.org/wiki/List_of_Harvey_Award_win...\ncolour\n...\n978-1-936393-09-1\nTale_of_Sand\n3.78\n2386\nTale of Sand\n1.0\nNaN\n1.0\nNaN\nBielefeld\n\n\n\n\n5 rows × 23 columns\n\n\n\nI am unable to label the columns for this dataframe accurately. There are 23 columns, however, the documentation inn “GNCScheme.pdf” only lists 16 column labels, which does not match. Thus, it will be difficult to fully analyze the dataset as is. I cannot guess what all the columns are because many values are coded into numbers.\nOne possible option to consider is to remove the columns I am unsure of what they represent, which will limit some of my analysis.\nFor now, I will look at another dataset, Adaptation.csv, which looks at different adaptations of graphic novels (movie, tv series, novel, etc.).\n\nadapt_db.head()\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n\n\n\n\n0\n1\n2\nAnimated feature film\nTatsumi\n2011-09-15\n\n\n1\n2\n219\nCrime thriller film\nA History of Violence\n2005-05-16\n\n\n2\n3\n7\nAdult animated science fiction film\nAkira\n1988-07-16\n\n\n3\n8\n225\nAnimated film\nAya of Yop City (French title: Aya de Yopougon)\n2013-07-17\n\n\n4\n9\n199\nComing-of-age romantic drama film\nBlue Is the Warmest Colour (French: La Vie d'A...\n2013-05-23\n\n\n\n\n\n\n\n\nadapt_db.columns = ['ID', 'BookID', 'Type', 'Title', 'Publication']\nadapt_db.head()\n\n\n\n\n\n\n\n\nID\nBookID\nType\nTitle\nPublication\n\n\n\n\n0\n1\n2\nAnimated feature film\nTatsumi\n2011-09-15\n\n\n1\n2\n219\nCrime thriller film\nA History of Violence\n2005-05-16\n\n\n2\n3\n7\nAdult animated science fiction film\nAkira\n1988-07-16\n\n\n3\n8\n225\nAnimated film\nAya of Yop City (French title: Aya de Yopougon)\n2013-07-17\n\n\n4\n9\n199\nComing-of-age romantic drama film\nBlue Is the Warmest Colour (French: La Vie d'A...\n2013-05-23\n\n\n\n\n\n\n\nSince BookID is referenced in adapt_db, I will need book_db’s index to know which book is being adapted.\n\nadapt_db.Type.value_counts().sort_values().plot(kind='barh', figsize=(8,25))\n\n&lt;Axes: &gt;\n\n\n\n\n\n\nadapt_db.BookID.value_counts().sort_values().plot(kind='barh', figsize=(8,25))\n\n&lt;Axes: &gt;\n\n\n\n\n\nI may be able to replace appearing values of BookID with their actual title for visualization purposes.\nNOTE: I still need to look for missing data, check ratio of missing values, and determine if there is data to be removed or imputed."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  }
+]
