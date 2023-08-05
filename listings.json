@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/GNCProject.html",
       "/posts/Topics.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
